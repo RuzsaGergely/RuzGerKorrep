@@ -1,4 +1,5 @@
+tananyagok/halozatok/*
 !tananyagok/halozatok/halozatok_tananyag.lyx
-!tananyagok/halozatok/src
+!tananyagok/halozatok/src/
+
 !.gitignore
-tananyagok/*
