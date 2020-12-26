@@ -29,6 +29,7 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -44,6 +45,7 @@
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -78,7 +80,7 @@
 \begin_layout Title
 Hálózatok I.
  és II.
- - Gyakorlat // Tanulói segédlet
+ - Gyakorlat / Tanulói segédlet
 \end_layout
 
 \begin_layout Author
@@ -116,6 +118,241 @@ Ezt a rövid tananyag vázlatot azért írtuk, hogy a 10.-12.
 \end_layout
 
 \begin_layout Part*
+Rétegek az IOS operációs rendszerben
+\end_layout
+
+\begin_layout Enumerate
+ROM Monitor [ROMMON>]
+\end_layout
+
+\begin_layout Enumerate
+User EXEC [Router>]
+\end_layout
+
+\begin_layout Enumerate
+Privileged EXEC [Router#]
+\end_layout
+
+\begin_layout Enumerate
+Global EXEC [Router(config)#]
+\end_layout
+
+\begin_layout Enumerate
+Special EXEC [Router(config-if)#]
+\end_layout
+
+\begin_layout Standard
+Mindegyik rétegnek megvan a saját jogköre, saját haszna.
+ Alacsonyabb rétegű parancsot magasabb rétegből „do” paranccsal lehet futtatni,
+ egy szintet visszalépni az „exit” paranccsal lehet, míg magasabb szintről
+ egyből a Privileged EXEC-szintre visszajutni az „end” paranccsal lehet.
+ A ROMMON szintet úgy lehet elérni, hogy a router indulása közben a CTRL+Break
+ gombbal megállítod a POST folyamatot.
+ 
+\end_layout
+
+\begin_layout Part*
+Konfigurációk mentése
+\end_layout
+
+\begin_layout Standard
+Két féle módon menthetjük el az éppen futó configunkat.
+ Az egyik a 
+\series bold
+copy
+\series default
+ parancs, a másik a 
+\series bold
+write
+\series default
+ parancs.
+ A 
+\series bold
+write
+\series default
+ parancs használatos akkor is amikor TFTP szerverre mentünk configot.
+ Helyi mentésre a 
+\series bold
+write 
+\series default
+parancs a leggyorsabb.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename src/Konfig_mentes.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Hosztnév (hostname) beállítása
+\end_layout
+
+\begin_layout Standard
+Az eszközök hosztneveit (hálózati neveit) a 
+\series bold
+hostname
+\series default
+ paranccsal tudjuk kiadni.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename src/Hosztnev_beallitas.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Message of the Day (MOTD) beállítása
+\end_layout
+
+\begin_layout Standard
+\align block
+A 
+\bar under
+Message of the Day
+\bar default
+, avagy a nap üzenete, az az üzenet, ami a bejelentkezéskor ír ki nekünk
+ a hálózati eszközünk.
+ Általában ez valami olyan szöveg, amivel jogilag védhetővé tesszük az eszközünk
+et az illetéktelen belépésekkel szemben.
+ A parancs kiadásakor bármilyen karakter használható határolókarakterként,
+ de ügyeljünk a konzisztenciára! (A legegyszerűbb olyan karaktert használni
+ amit nem használunk sűrűn, például a kettőskeresztet.)
+\end_layout
+
+\begin_layout Standard
+\align block
+
+\series bold
+A Packet Tracer nem támogatja az ékezetes betűket, így azokkal nem érdemes
+ próbálkozni.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename src/Banner_beallitas.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Privilegizált végrehajtási szint (Privileged EXEC level) jelszavas védelme
+\end_layout
+
+\begin_layout Standard
+Az itt leírt 
+\begin_inset Quotes eld
+\end_inset
+
+ötlet
+\begin_inset Quotes erd
+\end_inset
+
+ vagy 
+\begin_inset Quotes eld
+\end_inset
+
+idea
+\begin_inset Quotes erd
+\end_inset
+
+ érvényes a többi elérési módra, mint például a konzol vagy a Telnet (az
+ SSH kivétel ez alól).
+\end_layout
+
+\begin_layout Section*
+Titkosítatlan jelszó
+\end_layout
+
+\begin_layout Standard
+Titkosítatlan jelszó esetén, a futó konfigurációs fájlban (running-config)
+ szabad szemmel visszaolvasható módon (plain text) lesz a jelszó eltárolva.
+ Mivel a jelszót 
+\begin_inset Quotes eld
+\end_inset
+
+bekapcsoljuk
+\begin_inset Quotes erd
+\end_inset
+
+ így az 
+\series bold
+enable 
+\series default
+paranccsal tudunk jelszó adni (bekapcsolni).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename src/Privileg_jelszo_titkositatlan.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
