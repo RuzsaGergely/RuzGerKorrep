@@ -7,7 +7,7 @@
 \textclass article
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language magyar
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -63,7 +63,7 @@
 \paragraph_indentation default
 \is_math_indent 0
 \math_numbering_side default
-\quotes_style english
+\quotes_style polish
 \dynamic_quotes 0
 \papercolumns 1
 \papersides 1
@@ -98,13 +98,29 @@ BMSZC Neumann János Informatikai Technikum
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
 
 
 \end_layout
 
-\begin_layout Part*
+\begin_layout Part
 Előszó
 \end_layout
 
@@ -117,7 +133,7 @@ Ezt a rövid tananyag vázlatot azért írtuk, hogy a 10.-12.
  Jó tanulást kívánunk!
 \end_layout
 
-\begin_layout Part*
+\begin_layout Part
 Rétegek az IOS operációs rendszerben
 \end_layout
 
@@ -151,7 +167,7 @@ Mindegyik rétegnek megvan a saját jogköre, saját haszna.
  
 \end_layout
 
-\begin_layout Part*
+\begin_layout Part
 Konfigurációk mentése
 \end_layout
 
@@ -201,7 +217,7 @@ status open
 
 \end_layout
 
-\begin_layout Part*
+\begin_layout Part
 Hosztnév (hostname) beállítása
 \end_layout
 
@@ -236,7 +252,7 @@ status open
 
 \end_layout
 
-\begin_layout Part*
+\begin_layout Part
 Message of the Day (MOTD) beállítása
 \end_layout
 
@@ -286,7 +302,7 @@ status open
 
 \end_layout
 
-\begin_layout Part*
+\begin_layout Part
 Privilegizált végrehajtási szint (Privileged EXEC level) jelszavas védelme
 \end_layout
 
@@ -311,7 +327,7 @@ idea
  SSH kivétel ez alól).
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Titkosítatlan jelszó
 \end_layout
 
@@ -344,6 +360,123 @@ status open
 \align center
 \begin_inset Graphics
 	filename src/Privileg_jelszo_titkositatlan.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Titkosított jelszó
+\end_layout
+
+\begin_layout Standard
+Titkosított jelszó esetén a konfigurációs fájlban szabad szemmel nem értelmezhet
+ő módon lesz eltárolva a jelszó (értsd, titkosítva).
+ Ezt az alábbi paranncsal tudjuk elérni.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename src/Privileg_jelszo_titkositott.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Jelszótitkosítás
+\end_layout
+
+\begin_layout Standard
+Abban az esetben, ha a jelszavainkat szeretnénk utólag titkosítani, akkor
+ azt a jelszótitkosítási szolgáltatással (service) tudjuk megoldani.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename src/Service_Password_Encryption.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Távoli és helyi hozzáférés konfigurálása
+\end_layout
+
+\begin_layout Section
+Konzol vonal beállítása
+\end_layout
+
+\begin_layout Standard
+A konzol (Console) interfész arra szolgál, hogy az eszközöket egy speciális
+ kábel segítségével tudjuk helyileg (lokálisan) konfigurálni.
+\end_layout
+
+\begin_layout Section
+Konzol vonal jelszóval
+\end_layout
+
+\begin_layout Standard
+Belépvén a 0-as azonosítójú konzol vonalra, a 
+\emph on
+password <jelszo> 
+\emph default
+és 
+\emph on
+login
+\emph default
+ paranccsal tudjuk jelszóval védeni és egyben aktiválni a konzol vonalunkat.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename src/Konzol_jelszo_password.png
 	scale 40
 
 \end_inset
